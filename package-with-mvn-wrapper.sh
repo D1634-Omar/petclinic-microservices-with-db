@@ -1,0 +1,4 @@
+
+./mvnw clean package
+
+
