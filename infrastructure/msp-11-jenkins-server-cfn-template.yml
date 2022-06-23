@@ -66,7 +66,7 @@ Resources:
         - !GetAtt JenkinsServerSecurityGroup.GroupId
       Tags:                
         - Key: Name
-          Value: !Sub ${AWS::StackName}-Jenkins-32Server
+          Value: !Sub Jenkins Server of ${AWS::StackName}
         - Key: server
           Value: jenkins
       UserData:
