@@ -4,22 +4,17 @@ metadata:
   annotations:
     kompose.cmd: kompose convert -f docker-compose.yml -o petclinic_chart/templates
     kompose.image-pull-secret: regcred
-    kompose.service.expose: '{{ .Values.DNS_NAME }}'
-    kompose.service.nodeport.port: "30001"
-    kompose.service.type: nodeport
     kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
-    io.kompose.service: api-gateway
-  name: api-gateway
+    io.kompose.service: admin-server
+  name: admin-server
 spec:
   ports:
-    - name: "8080"
-      nodePort: 30001
-      port: 8080
-      targetPort: 8080
+    - name: "9090"
+      port: 9090
+      targetPort: 9090
   selector:
-    io.kompose.service: api-gateway
-  type: NodePort
+    io.kompose.service: admin-server
 status:
   loadBalancer: {}
